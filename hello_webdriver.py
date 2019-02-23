@@ -3,7 +3,7 @@
 from selenium import webdriver
 import time
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 driver.maximize_window()
 driver.get("http://wsb.pl")

@@ -1,0 +1,28 @@
+class WsbPlCheck(unittest.TestCase):
+
+    #przed kazdym testem - TCsetup
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
+
+    #metody rozpoczynajace sie od slowa test - nasze testy
+    def test_wsb_pl(self):
+        driver = self.driver
+        driver.get("http://wsb.pl")
+        self.assertIn("Wyższe Szkoły Bankowe".decode("utf-8"), driver.title)
+
+
+    def test_wsb_pl_1(self):
+            driver = self.driver
+            driver.get("http://wsb.pl")
+            self.assertIn("Wyższa Szkoła Bankowa".decode("utf-8"), driver.title)
+
+
+    #sprzatanie
+    def tearDown(self):
+        self.driver.quit()
+
+
+
+
+#klasa do skopiowania do webdriver test        
